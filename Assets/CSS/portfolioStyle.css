@@ -1,0 +1,108 @@
+:root{
+    --primaryBackgroundColor: #120458;
+    --secondaryBackgroundColor: #7a04eb;
+    --tertiaryBackgroundColor: #fe75fe;
+    --fontColor: #FFF01F;
+    --radius: 4px;
+}
+*{
+    padding: 0 0;
+}
+body{
+    background-color: rgb(87, 92, 134);
+}
+#mainArea{
+    background-image: linear-gradient(var(--primaryBackgroundColor), var(--tertiaryBackgroundColor), var(--secondaryBackgroundColor));
+    color: var(--fontColor);
+    display: flex;
+    flex-wrap: wrap;
+    height: 1472px;
+    width: 1792px;
+    margin: auto;
+}
+
+header{
+    height: 128px;
+    width: 100%;
+    display: flex;
+}
+h1{
+    font-size: 48pt;
+    align-self: center;
+    width: 640px;
+}
+nav{
+    width: 1024px;
+    display: flex;
+    justify-content: space-around;
+    align-self: center;
+}
+h2{
+    font-size: 36pt;
+    margin-left: 32px;
+}
+h3{
+    font-size: 24pt;
+}
+p{
+    font-size: 12pt;
+    margin-left: 40px;
+}
+a{
+    color: var(--fontColor);
+    text-decoration: none;
+}
+
+#teaser{
+    opacity: 50%;
+}
+
+aside{
+    width: 368px;
+}
+
+main{
+    height: 1024px;
+    width: 1280px;
+    display: flex;
+}
+#column2{
+    display: flex;
+    flex-wrap: wrap;
+}
+#projectOne{
+    width: 512px;
+    height: 768px;
+}
+#projectTwo{
+    width: 512px;
+    height: 256px;
+}
+#projectThree{
+    width: 512px;
+    height: 512px;
+}
+#projectFour{
+    width: 256px;
+    height: 512px;
+}
+#projectFive{
+    width: 768px;
+    height: 512px;
+}
+.projectTag{
+    position: relative;
+    width: 175px;
+    top: -64px;
+    padding-left: 32px;
+    background-color: var(--secondaryBackgroundColor);
+    border-top-right-radius: var(--radius);
+    border-bottom-right-radius: var(--radius);
+}
+
+footer{
+    display: flex;
+    margin-left: 368px;
+    width: 512px;
+    justify-content: space-between;
+}
