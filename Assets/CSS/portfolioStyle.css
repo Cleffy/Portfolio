@@ -1,108 +1,142 @@
 :root{
-    --primaryBackgroundColor: #120458;
-    --secondaryBackgroundColor: #7a04eb;
-    --tertiaryBackgroundColor: #fe75fe;
-    --fontColor: #FFF01F;
-    --radius: 4px;
+    --backgroundColor: #787326;
+    --highlightColor: #CCC13A;
+    --textColor: #3E3407;
+    --basePadding: 8px;
+    --baseRadius: 8px;
 }
 *{
-    padding: 0 0;
-}
-body{
-    background-color: rgb(87, 92, 134);
-}
-#mainArea{
-    background-image: linear-gradient(var(--primaryBackgroundColor), var(--tertiaryBackgroundColor), var(--secondaryBackgroundColor));
-    color: var(--fontColor);
-    display: flex;
-    flex-wrap: wrap;
-    height: 1472px;
-    width: 1792px;
-    margin: auto;
+    box-sizing: border-box;
 }
 
-header{
-    height: 128px;
-    width: 100%;
-    display: flex;
+body{
+    display: block;
+    background-image: radial-gradient(#f9f3d1, #f1e098);
+    color: var(--textColor);
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 h1{
     font-size: 48pt;
-    align-self: center;
-    width: 640px;
-}
-nav{
-    width: 1024px;
-    display: flex;
-    justify-content: space-around;
-    align-self: center;
+    padding: var(--basePadding);
 }
 h2{
     font-size: 36pt;
-    margin-left: 32px;
+    padding: var(--basePadding);
 }
 h3{
     font-size: 24pt;
+    padding: var(--basePadding);
 }
 p{
-    font-size: 12pt;
-    margin-left: 40px;
+    font-size: 14pt;
+    padding: var(--basePadding);
 }
 a{
-    color: var(--fontColor);
+    font-size: 24pt;
+    padding: var(--basePadding);
     text-decoration: none;
+    color: var(--textColor);
+}
+nav a:hover{
+    border: 2px;
+    border-style: dashed;
+    border-color: var(--highlightColor);
+    color: var(--highlightColor);
+    width: calc(100%-4px);
 }
 
-#teaser{
-    opacity: 50%;
-}
-
-aside{
-    width: 368px;
-}
-
-main{
-    height: 1024px;
-    width: 1280px;
+header{
     display: flex;
+    padding: var(--basePadding);
+    background-color: var(--backgroundColor);
+    flex-wrap: wrap;
 }
-#column2{
+header img{
+    width: 128px;
+    border-radius: 32px;
+    margin-left: 50px;
+    margin-right: 50px;
+    align-self: center;
+}
+header h1{
+    align-self: last baseline;
+    padding-bottom: 0;
+}
+header nav{
+    align-self: last baseline;
+    align-content: space-evenly;
+    margin-left: auto;
+}
+header nav a{
+    padding-bottom: 0;
+}
+main section{
+    display: flex;
+    flex-direction: row;
+    align-items: last baseline;
+    padding: var(--basePadding);
+}
+main section h2{
+    flex-basis: 228px;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+#gallery{
+    display: flex;
+    flex-flow: wrap;
+}
+#gallery a{
+    padding: 0;
+}
+.project{
+    width: 528px;
+    margin: 8px;
+    border-radius: var(--baseRadius);
+    background-color: var(--backgroundColor);
+    transition: transform 250ms ease-in-out;
+    transition: background-color 500ms ease-in-out;
+}
+.project img{
+    position: relative;
+    border-top-left-radius: var(--baseRadius);
+    border-top-right-radius: var(--baseRadius);
+    top: 8px;
+    left: 8px;
+    width: 512px;
+}
+.project h3{
+    position: relative;
+    top: -64px;
+    width: max-content;
+    background-color: var(--backgroundColor);
+    border-radius: var(--baseRadius);
+    transition: background-color 500ms ease-in-out;
+}
+.project:hover h3{
+    background-color: var(--highlightColor);
+}
+.project:hover{
+    background-color: var(--highlightColor);
+    transform: scale(1.05);
+}
+#contact{
+    background-color: var(--backgroundColor);
+}
+#contact nav{
     display: flex;
     flex-wrap: wrap;
 }
-#projectOne{
-    width: 512px;
-    height: 768px;
-}
-#projectTwo{
-    width: 512px;
-    height: 256px;
-}
-#projectThree{
-    width: 512px;
-    height: 512px;
-}
-#projectFour{
-    width: 256px;
-    height: 512px;
-}
-#projectFive{
-    width: 768px;
-    height: 512px;
-}
-.projectTag{
-    position: relative;
-    width: 175px;
-    top: -64px;
-    padding-left: 32px;
-    background-color: var(--secondaryBackgroundColor);
-    border-top-right-radius: var(--radius);
-    border-bottom-right-radius: var(--radius);
-}
 
-footer{
-    display: flex;
-    margin-left: 368px;
-    width: 512px;
-    justify-content: space-between;
+@media screen and (max-width: 768px){
+    main section{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    main section h2{
+        flex-basis: auto;
+    }
+    header{
+        flex-direction: column;
+        align-content: center;
+    }
 }
