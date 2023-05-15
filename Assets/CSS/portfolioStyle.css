@@ -2,9 +2,10 @@
     Setup color palette 
 */
 :root{
-    --backgroundColor: #787326;
-    --highlightColor: #CCC13A;
-    --textColor: #3E3407;
+    --backgroundColor: #3e2d1a;
+    --highlightColor: #fcdf7b;
+    --textColor: #fbf7db;
+    --colorShift: #594934;
     --basePadding: 8px;
     --baseRadius: 8px;
 }
@@ -19,7 +20,7 @@
 */
 body{
     display: block;
-    background-image: radial-gradient(#f9f3d1, #f1e098);
+    background-image: radial-gradient(#9d6835, #695437);
     color: var(--textColor);
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
@@ -171,10 +172,10 @@ main section h2{
     Project hover effect, transition to highlight color and increase in size
 */
 .project:hover h3{
-    background-color: var(--highlightColor);
+    background-color: var(--colorShift);
 }
 .project:hover{
-    background-color: var(--highlightColor);
+    background-color: var(--colorShift);
     transform: scale(1.03);
 }
 #focus{
