@@ -46,6 +46,8 @@ nav a:hover{
 }
 
 header{
+    max-width: 1280px;
+    margin: auto;
     display: flex;
     padding: var(--basePadding);
     background-color: var(--backgroundColor);
@@ -71,6 +73,9 @@ header nav a{
     padding-bottom: 0;
 }
 main section{
+    width: 80%;
+    max-width: 1280px;
+    margin: auto;
     display: flex;
     flex-direction: row;
     align-items: last baseline;
@@ -89,7 +94,8 @@ main section h2{
     padding: 0;
 }
 .project{
-    width: 528px;
+    width: 45%;
+    max-width: 480px;
     margin: 8px;
     border-radius: var(--baseRadius);
     background-color: var(--backgroundColor);
@@ -102,7 +108,9 @@ main section h2{
     border-top-right-radius: var(--baseRadius);
     top: 8px;
     left: 8px;
-    width: 512px;
+    display: block;
+    width: calc(100% - 16px);
+    height: auto;
 }
 .project h3{
     position: relative;
@@ -117,8 +125,13 @@ main section h2{
 }
 .project:hover{
     background-color: var(--highlightColor);
-    transform: scale(1.05);
+    transform: scale(1.03);
 }
+#focus{
+    width: calc(90% + 16px);
+    max-width: 1050px;
+}
+
 #contact{
     background-color: var(--backgroundColor);
 }
@@ -138,5 +151,9 @@ main section h2{
     header{
         flex-direction: column;
         align-content: center;
+    }
+    .project, #focus{
+        width: 96%;
+        max-width: 1072px;
     }
 }
