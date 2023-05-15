@@ -1,3 +1,6 @@
+/*
+    Setup color palette 
+*/
 :root{
     --backgroundColor: #787326;
     --highlightColor: #CCC13A;
@@ -9,12 +12,21 @@
     box-sizing: border-box;
 }
 
+/*
+    Block display Header - Main
+    Gradient background
+    Serif Font Family
+*/
 body{
     display: block;
     background-image: radial-gradient(#f9f3d1, #f1e098);
     color: var(--textColor);
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
+
+/*
+    Text formatting, 48pt, 36pt, 24pt, 14pt
+*/
 h1{
     font-size: 48pt;
     padding: var(--basePadding);
@@ -37,28 +49,38 @@ a{
     text-decoration: none;
     color: var(--textColor);
 }
-nav a:hover{
+
+/*
+    Link hover effect: dashed outline/color change
+*/
+nav a{
     border: 2px;
+    border-style: hidden;
+}
+nav a:hover{
     border-style: dashed;
     border-color: var(--highlightColor);
     color: var(--highlightColor);
-    width: calc(100%-4px);
 }
 
-header{
+/*
+    Max width set to 1280px to maintain intended aspect ratio.
+*/
+body{
     max-width: 1280px;
     margin: auto;
+}
+
+/*
+    Portrait | Name | Links
+    Background framing
+    Text set to align at bottom for readability.
+*/
+header{
     display: flex;
     padding: var(--basePadding);
     background-color: var(--backgroundColor);
     flex-wrap: wrap;
-}
-header img{
-    width: 128px;
-    border-radius: 32px;
-    margin-left: 50px;
-    margin-right: 50px;
-    align-self: center;
 }
 header h1{
     align-self: last baseline;
@@ -72,19 +94,44 @@ header nav{
 header nav a{
     padding-bottom: 0;
 }
+header img{
+    max-width: 128px;
+    height: auto;
+    border-radius: 32px;
+    align-self: center;
+}
+
+/*
+    Banner
+    About Me    | Info
+                | Focus Project
+    Work        | Other Projects
+    Contact     | Contact Info
+
+    Headers set to take up same width
+    Basic Layout for projects
+    ---------
+    | Focus |
+    |       |
+    ---------
+    |   |   |
+    ---------
+    |   |   |
+    ---------
+*/
 main section{
-    width: 80%;
-    max-width: 1280px;
-    margin: auto;
     display: flex;
     flex-direction: row;
     align-items: last baseline;
     padding: var(--basePadding);
 }
 main section h2{
-    flex-basis: 228px;
+    flex-basis: 25%;
     flex-grow: 0;
     flex-shrink: 0;
+}
+#banner{
+    width: 100%;
 }
 #gallery{
     display: flex;
@@ -120,6 +167,9 @@ main section h2{
     border-radius: var(--baseRadius);
     transition: background-color 500ms ease-in-out;
 }
+/*
+    Project hover effect, transition to highlight color and increase in size
+*/
 .project:hover h3{
     background-color: var(--highlightColor);
 }
@@ -140,6 +190,9 @@ main section h2{
     flex-wrap: wrap;
 }
 
+/*
+    On less width, change layout to column
+*/
 @media screen and (max-width: 768px){
     main section{
         flex-direction: column;
