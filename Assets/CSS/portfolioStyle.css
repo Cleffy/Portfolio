@@ -45,6 +45,7 @@ p{
     padding: var(--basePadding);
 }
 a{
+    display: block;
     font-size: 24pt;
     padding: var(--basePadding);
     text-decoration: none;
